@@ -11,7 +11,7 @@ export const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/recipes/");
+        const response = await axios.get("https://recipe-full.onrender.com/recipes/");
         setData(response.data);
       } catch (error) {
         console.error("Error fetching recipes:", error);
@@ -27,7 +27,7 @@ export const Home = () => {
         const token = localStorage.getItem("token");
         if (!token) return;
 
-        const response = await axios.get("http://localhost:3000/favorites", {
+        const response = await axios.get("https://recipe-full.onrender.com/favorites", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
