@@ -12,7 +12,7 @@ const MyRecipes = () => {
         const token = localStorage.getItem("token");
         if (!token) throw new Error("No token found");
 
-        const response = await axios.get("http://localhost:3000/my-recipes", {
+        const response = await axios.get("https://recipe-full.onrender.com/my-recipes", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -30,7 +30,7 @@ const MyRecipes = () => {
       const token = localStorage.getItem("token");
       if (!token) throw new Error("No token found");
 
-      await axios.delete(`http://localhost:3000/recipes/${recipeId}`, {
+      await axios.delete(`https://recipe-full.onrender.com/recipes/${recipeId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
